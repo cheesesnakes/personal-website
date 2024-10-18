@@ -1,12 +1,19 @@
-version: '3.3'
+---
+version: "3.7"
 
-services:
-  nginx:
-    image: nginx
-    container_name: personal-website
+# this file uses prebuilt image in dockerhub
+services:  
+  website:
+    image: amirpourmand/al-folio:latest
+    container_name: persona_website
+    build: .
+    ports:
+     # - 8080:8080
+      - 35729:35729
     volumes:
-      - /home/cheesesnakes/apps/website/_site:/usr/share/nginx/html
-    restart: unless-stopped
+      - .:/srv/jekyll
+    environment:
+      - JEKYLL_ENV=development
     networks:
       - proxy
     labels:
@@ -19,7 +26,7 @@ services:
       - "traefik.http.routers.shawn-secure.rule=Host(`shawn.cheesesnakes.net`)"
       - "traefik.http.routers.shawn-secure.tls=true"
       - "traefik.http.routers.shawn-secure.service=shawn"
-      - "traefik.http.services.shawn.loadbalancer.server.port=80"
+      - "traefik.http.services.shawn.loadbalancer.server.port=8080"
       - "traefik.docker.network=proxy"
   
 networks:
