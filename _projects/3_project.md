@@ -1,81 +1,13 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
-importance: 3
-category: work
+title: Fishes do fear the reaper; Anthropogenic fear in coral reefs.
+description: Ph.D. thesis dealing with predator - prey interactions and the ecology of fear.
+img: /assets/img/net_throw.jpg
+importance: 1
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+**Supervisor:** Prof. Kartik Shanker
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+**Thesis Advisors:** Dr. Maria Thaker, Dr. Vishwesha Guttal
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+Prey species perceive the risk of encountering predators and being predated upon as fear in the landscape. Prey can thus implement behavioural antipredator strategies by altering functional traits such as habitat use, foraging time, and forage choice. Several factors can affect prey perception of predation risk in the landscape, also known as the landscape of fear, including predator traits, prey traits, and habitat characteristics. Humans may also play the role of predators in natural ecosystems. Both predator and prey species may perceive the threat of humans as predation risk, thus generating fear across trophic levels. Over the past century, most predator species have been extirpated from terrestrial and marine systems. Accordingly, humans may also alter the natural landscape of fear indirectly. Here, I attempt to understand how anthropogenic fear qualitatively and quantitatively differs from fear of other predator species. I plan to use a combination of theoretical and empirical approaches to answer my research questions. First, I will review and analyze current literature on anthropogenic fear to determine the extent and magnitude of anthropogenic fear effects across ecosystems and trophic levels. I will contrast the impact of risk from humans and other predators on prey foraging behaviour. For the second chapter, I will use a theoretical approach to understand the effect of fear at multiple trophic levels instead of at a single trophic level. I hope to generate predictions on the spatial distribution of predators and prey in systems with pervasive fear. The third and fourth chapters will involve field data collection and experiments in South Andaman and Richie's Archipelago. These sites have varying levels of protection with a strong gradient of coral cover and human activity. In the third chapter, I will quantify the effect of the loss of predators on coral reefs due to fishing on herbivore foraging behaviour. My final chapter will be an experiment to quantify the extent of fear generated by fisheries on predator and prey species in coral reefs. 
