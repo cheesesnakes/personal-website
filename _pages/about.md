@@ -7,7 +7,7 @@ subtitle: <a href='#'>Ph.D. Candidate (PMRF), IISc.</a>.
 profile:
   align: right
   image: shawn.jpg
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   more_info: >
     
 news: true # includes a list of news items
