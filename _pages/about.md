@@ -6,7 +6,7 @@ subtitle: <a href='#'>Ph.D. Candidate (PMRF), IISc.</a>.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: shawn.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
     
