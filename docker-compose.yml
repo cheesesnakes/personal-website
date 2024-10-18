@@ -1,12 +1,34 @@
+---
+version: "3.7"
+
 # this file uses prebuilt image in dockerhub
-services:
-  jekyll:
+services:  
+  website:
     image: amirpourmand/al-folio:latest
+    container_name: persona_website
     build: .
     ports:
-      - 8080:8080
+     # - 8080:8080
       - 35729:35729
     volumes:
       - .:/srv/jekyll
     environment:
       - JEKYLL_ENV=development
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.shawn.entrypoints=http"
+      - "traefik.http.routers.shawn.rule=Host(`shawn.cheesesnakes.net`)"
+      - "traefik.http.middlewares.shawn-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.shawn.middlewares=shawn-https-redirect"
+      - "traefik.http.routers.shawn-secure.entrypoints=https"
+      - "traefik.http.routers.shawn-secure.rule=Host(`shawn.cheesesnakes.net`)"
+      - "traefik.http.routers.shawn-secure.tls=true"
+      - "traefik.http.routers.shawn-secure.service=shawn"
+      - "traefik.http.services.shawn.loadbalancer.server.port=8080"
+      - "traefik.docker.network=proxy"
+  
+networks:
+  proxy:
+    external: true
