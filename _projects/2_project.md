@@ -5,4 +5,5 @@ description: Changing mesopredator species dynamics in an anthropogenically domi
 img: /assets/img/fisheries.jpg
 importance: 1
 redirect: https://github.com/cheesesnakes/sea-snake-resource-use
+category: past
 ---

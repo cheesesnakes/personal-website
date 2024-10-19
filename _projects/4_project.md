@@ -5,4 +5,5 @@ description: Fisheries induced shifts in sea snake assemblages along the Konkan 
 img: /assets/img/bycatch.jpg
 importance: 2
 redirect: https://github.com/cheesesnakes/sea-snake-bycatch
+category: past
 ---
