@@ -2,7 +2,7 @@
 layout: page
 title: Fishes do fear the reaper; Anthropogenic fear in coral reefs.
 description: Ph.D. thesis dealing with predator - prey interactions and the ecology of fear.
-img: /assets/img/net_throw.jpg
+img: /assets/img/spear.jpg
 importance: 1
 category: present
 ---
