@@ -2,7 +2,7 @@
 layout: page
 title: Monitoring elasmobranchs in Malvan 
 description: Long term monitoring of elasmobranch fisheries on the west coast of India.
-img: /assets/img/bycatch.jpg
+img: /assets/img/sharks.jpg
 importance: 3
 category: present 
 ---

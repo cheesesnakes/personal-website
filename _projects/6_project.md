@@ -2,7 +2,7 @@
 layout: page
 title: Priorities for research and management in the Andaman Islands 
 description: Survey to determine imporant areas of research for the future of the ANI.
-img: /assets/img/tamhini.jpg
+img: /assets/img/andaman.jpg
 importance: 3
 category: present
 ---
