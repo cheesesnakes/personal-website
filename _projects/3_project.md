@@ -7,6 +7,16 @@ importance: 1
 category: present
 ---
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/sim.gif" title="Model simulation outcome." class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Realisation of a model with apex predators, mesopredators, and herbivores. The model simulates the effect of fear on the spatial distribution of predators and prey in a coral reef ecosystem.
+</div>
+
+
 **Supervisor:** Prof. Kartik Shanker
 
 **Thesis Advisors:** Dr. Maria Thaker, Dr. Vishwesha Guttal
