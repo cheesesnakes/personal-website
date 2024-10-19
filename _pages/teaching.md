@@ -44,6 +44,12 @@ nav_order: 6
 
     An invited talk at the Center for ecological science, Unviersity of Exeter
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/sccs-cam-2019.jpg" title="Talk at SCCS Cambridge 2019." class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 ### Fishing for sea snakes
 
     A student talk I gave at SCCS Cambridge 2019 about my work with Dakshin Foundation on sea snake bycatch.
