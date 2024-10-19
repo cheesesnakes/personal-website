@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://shawn.cheesesnakes.net/sitemap.xml
