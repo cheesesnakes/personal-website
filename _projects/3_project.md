@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Fishes do fear the reaper; Understanding the magnitude and mechanism of the effects of human iteractions on animal behavior.
+title: Fishes do fear the reaper; Understanding the magnitude and mechanism of the effects of human interactions on animal behavior.
 description: Ph.D. thesis dealing with predator - prey interactions and the ecology of fear.
 img: /assets/img/spear.jpg
 importance: 1
