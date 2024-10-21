@@ -32,10 +32,10 @@ To answer these questions, my research consists of four chapters, each employing
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/mp4/fish-eating.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
+        {% include figure.liquid loading="eager" path="assets/img/fish-eating.gif" title="." class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-    
+
 <div class="caption">
-    A mixed species foraging group.
+    A mixed species foraging group of reef associated fish in South Andaman.
 </div>
