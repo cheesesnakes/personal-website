@@ -9,8 +9,11 @@ category: present
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/net_throw.jpg" title="." class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/island-heatmap.png" title="." class="img-fluid rounded z-depth-1" %}
     </div>
+</div>
+<div class="caption">
+   Heatmap of research across the Andaman and Nicobar Islands over the past two decades.
 </div>
 
 **Identifying Key Research and Management Priorities for the Andaman and Nicobar Islands**
