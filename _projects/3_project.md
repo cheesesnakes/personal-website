@@ -29,3 +29,13 @@ A) Under what contexts do animals perceive humans as a threat?
 B) What mechanisms do humans employ to alter animal behavior through their activities?
 
 To answer these questions, my research consists of four chapters, each employing different tools and methodologies. In the first chapter, I conduct a systematic review and meta-analysis to assess the magnitude and context of human impacts on animal behavior. In the second, I use agent-based models to explore how the replacement of apex predators by humans affects the population dynamics and behavior of mesopredators and herbivores. My field observations on coral reefs in the Andaman Islands form the third chapter, where I investigate how the removal of predator fish species influences herbivory within these ecosystems. Lastly, I conduct predator model presentation experiments to determine whether the loss of predators on reefs leads to diminished anti-predator behavior in prey species. Through this research, I aim to deepen our understanding of how humans, in various roles, shape the behaviors and ecological dynamics of the animals around us.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="assets/mp4/fish-eating.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
+    </div>
+</div>
+    
+<div class="caption">
+    A mixed species foraging group.
+</div>
