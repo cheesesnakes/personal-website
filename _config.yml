@@ -7,7 +7,7 @@ first_name: Shawn
 middle_name: V.
 last_name: Dsouza
 contact_note: >
-  Feel free to reach out to me at <a href="mailto:me@shawndsouza.com" target="_blank">.
+  I'd love to talk to you about animal behavior or any of my work!
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A place to find my academic work and writing.
 footer_text: >
@@ -19,7 +19,7 @@ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🦦 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://shawndsouza.com # the base hostname & protocol for your site
-baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
+baseurl: / # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
