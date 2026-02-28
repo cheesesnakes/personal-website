@@ -4,7 +4,7 @@ services:
     container_name: website_builder
     image: amirpourmand/al-folio:v0.16.3
     ports:
-      - 8080:8080
+      #- 8080:8080
       - 35729:35729
     volumes:
       - .:/srv/jekyll
