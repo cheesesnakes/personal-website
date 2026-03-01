@@ -3,8 +3,9 @@ services:
   jekyll:
     container_name: website_builder
     image: amirpourmand/al-folio:v0.16.3
+    mem_limit: 2g
     ports:
-      #- 8080:8080
+      - 4080:4080
       - 35729:35729
     volumes:
       - .:/srv/jekyll
