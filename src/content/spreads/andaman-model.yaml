@@ -9,8 +9,7 @@ left:
     agent-based model with <mark>apex predators, mesopredators and herbivores</mark>
     that learn to fear, to see how risk from humans plays out in space and in
     population dynamics.
-  photos:
-    - { src: model-run.jpg, alt: "Model output plots showing prey, predator and apex predator numbers and traits over time, with a map of agent positions", caption: "One run: prey, predators and apex predators over time, and where they end up." }
+  video: /assets/video/space_lv.mp4
 
 right:
   head: [Side project, With Dakshin Foundation]

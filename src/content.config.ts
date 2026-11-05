@@ -28,6 +28,7 @@ const page = z.object({
   chapters_label: z.string().optional(),
   chapters: z.array(chapter).default([]),
   reef: z.boolean().default(false),
+  video: z.string().optional(),
   photos: z.array(photo).default([]),
   photos_row: z.boolean().default(false),
   sketch: z.string().optional(),

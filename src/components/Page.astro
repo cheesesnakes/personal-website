@@ -22,6 +22,12 @@ const { page, pubs = [], headingId } = Astro.props;
   {page.notes_label && <p class="notes-label">{page.notes_label}</p>}
   {page.notes && <div class="notes" set:html={md(page.notes)} />}
 
+  {page.video && (
+    <video class="model-video" autoplay muted controls preload="metadata" playsinline aria-label="Agent-based reef model simulation" src={page.video}>
+      Your browser does not support video playback.
+    </video>
+  )}
+
   {page.chapters.length > 0 && (
     <>
       {page.chapters_label && <p class="notes-label">{page.chapters_label}</p>}
