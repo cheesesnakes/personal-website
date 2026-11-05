@@ -4,34 +4,46 @@ Based on [al-folio](https://github.com/alshedivat/al-folio)
 
 ### Usage
 
-Make your changes in the root directory then spin up the `website_builder` container to build the site.
+Make your changes in the root directory, then start the development container:
 
 ```bash
 docker compose -f docker-compose-dev.yml up -d
 ```
 
-Then run the following command to build the site.
+The container installs the dependencies and runs Jekyll's watch server. Open <http://localhost:4080> to view the site. Port `4080` on your machine maps to port `8080` in the container; live reload uses port `35729`. Changes to the mounted project files are rebuilt automatically.
+
+To follow the development server logs:
 
 ```bash
-docker exec -it website_builder bash -c "bundle install && bundle exec jekyll build"
+docker compose -f docker-compose-dev.yml logs -f
 ```
 
-The development container serves the site at <http://localhost:4080> and rebuilds it when files change.
+To generate the static site manually instead of relying on the watch server:
 
-For deployment, spin up nginx. You will have to restart or recreate the nginx container if you make changes to the site.
+```bash
+docker exec -it website_builder bundle exec jekyll build
+```
+
+For deployment, the nginx container serves the prebuilt site from `/home/cheesesnakes/apps/website/_site` on the Docker host. Put the generated Jekyll output in that directory before deploying; this path is specific to the deployment host. The Compose configuration also expects an existing external Docker network named `proxy`, connected to Traefik.
 
 ```bash
 docker compose -f docker-compose.yml up -d
 ```
 
-or
+Since nginx reads the site through a bind mount, updating the files in that directory does not require restarting nginx. To restart the container explicitly:
 
 ```bash
 docker compose -f docker-compose.yml restart
 ```
 
-Shut down the container when you're done:
+Shut down the development container when you're done:
 
 ```bash
 docker compose -f docker-compose-dev.yml down
+```
+
+To shut down the deployment container:
+
+```bash
+docker compose -f docker-compose.yml down
 ```
