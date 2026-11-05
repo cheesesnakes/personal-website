@@ -20,6 +20,10 @@ nav_order: 6
 
     [Poster](assets/pdf/poster_2025_2) at GRC Predator – prey interactions meeting, Barga.
 
+## Fishes do fear the reaper
+
+    A talk at the International Society for Behavioral Ecology (ISBE) 2026 conference on 25 July 2026.
+
 
 ## **2025**
 
