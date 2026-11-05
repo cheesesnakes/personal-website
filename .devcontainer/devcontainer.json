@@ -1,34 +1,21 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/jekyll
 {
-  "name": "Jekyll",
-  // Using a Dockerfile to fix the broken Yarn repository. See issue #3487.
+  "name": "Field Notebook (Astro)",
   "build": {
     "dockerfile": "Dockerfile"
   },
-
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  "features": {
-    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "build-essential,imagemagick,inotify-tools,jupyter-nbconvert,procps,ruby-full,zlib1g-dev"
-    },
-    "ghcr.io/devcontainers-extra/features/prettier:1.0.2": {}
-  },
-
-  // Optionally: run jekyll serve automatically on container entering using the Docker entrypoint
-  "postAttachCommand": "./bin/entry_point.sh",
-
-  "customizations": {
-    "vscode": {
-      "extensions": ["esbenp.prettier-vscode", "sissel.shopify-liquid", "yzhang.markdown-all-in-one"],
-      "settings": {
-        // use prettier code formatter as default formatter
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "prettier.configPath": ".prettierrc",
-        "editor.formatOnSave": true
-      }
+  "forwardPorts": [4321],
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro dev server",
+      "onAutoForward": "openBrowser"
     }
   },
-
+  "postCreateCommand": "npm install",
+  "postStartCommand": "nohup npm run dev -- --host 0.0.0.0 > /tmp/astro-dev.log 2>&1 &",
+  "customizations": {
+    "vscode": {
+      "extensions": ["astro-build.astro-vscode"]
+    }
+  },
   "remoteUser": "vscode"
 }
