@@ -130,7 +130,7 @@ const contents = [
               <h3 class="year">{y.year}</h3>
               <ol class="log">
                 {y.items.map((t) => (
-                  <li><time>{t.kind}</time><span class="e">{t.title}<small>{t.where}{t.pdf && <> · <a href={t.pdf}>PDF</a></>}</small></span></li>
+                  <li><time>{t.kind}</time><span class="e">{t.title}<small>{t.where}{t.pdf && <> · <a href={t.pdf}>PDF</a></>}</small>{t.authors && <small>{t.authors}</small>}{t.abstract && <details class="talk-abstract"><summary>Abstract</summary><p>{t.abstract}</p></details>}</span></li>
                 ))}
               </ol>
               {(y.photos || []).map((p) => <div style="margin-top:1.5rem"><Photo {...p} /></div>)}

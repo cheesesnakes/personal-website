@@ -159,6 +159,9 @@ mark{background:linear-gradient(transparent 35%,var(--hilite) 35%,var(--hilite) 
 .log time{font-size:.82rem;color:var(--muted)}
 .log .e{font-family:"Kalam",cursive;color:var(--ballpoint);font-size:1.12rem;line-height:1.35}
 .log .e small{display:block;font-family:"Public Sans",sans-serif;color:var(--muted);font-size:.85rem;line-height:1.4;margin-top:.1rem}
+.talk-abstract{font-family:"Public Sans",sans-serif;font-size:.85rem;color:var(--muted);margin-top:.35rem}
+.talk-abstract summary{cursor:pointer;width:max-content}
+.talk-abstract p{font-size:.85rem;line-height:1.55;margin:.4rem 0 0;color:var(--ink)}
 .year{font-family:"Kalam",cursive;font-weight:700;color:var(--ballpoint);font-size:1.5rem;margin:1.25rem 0 .25rem}
 .year:first-of-type{margin-top:0}
 details.older{margin-top:.75rem}
