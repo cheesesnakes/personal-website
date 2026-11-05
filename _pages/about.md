@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Postdoctoral Reseacher</a>. 
+subtitle: <a href='#'>Postdoctoral Researcher</a>.
 
 profile:
   align: right

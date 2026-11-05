@@ -29,11 +29,11 @@ nav_order: 6
     </div>
 </div>
 
-## Responses and adaptions to human super-predators and anthropogenicallymodified environments
+## Responses and adaptations to human super-predators and anthropogenically modified environments
     
     Symposium at Behaviour 2025, Kolkata. Co-chairs: Chayan Munshi and Maria Thaker.
 
-### Are super-predatos also super-scary?
+### Are super-predators also super-scary?
 
     A talk at the Behaviour 2025 conference in Kolkata.
 
@@ -49,7 +49,7 @@ nav_order: 6
     </div>
 </div>
 
-### Are super-predatos also super-scary?
+### Are super-predators also super-scary?
 
     A talk at the International Society for Behavioral Ecology conference in Melbourne.
     
@@ -72,11 +72,11 @@ nav_order: 6
 
 ### Parikrama Festival of Science
 
-    A talk about the the ecology and threats to sea snakes for school kids organised by the Parikrama Foundation.
+    A talk about the ecology and threats to sea snakes for school kids organised by the Parikrama Foundation.
 
 ### Sea snakes: Ecology and threats
 
-    An invited talk at the Center for ecological science, Unviersity of Exeter
+    An invited talk at the Center for ecological science, University of Exeter
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -102,7 +102,7 @@ nav_order: 6
 
     A student speed talk at SPEEC UP Bangalore.
 
-### Can butterflies improver conservation?
+### Can butterflies improve conservation?
 
     A student poster at SCCS Bangalore 2017
 
