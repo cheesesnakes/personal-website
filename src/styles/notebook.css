@@ -44,7 +44,7 @@ img{max-width:100%}
 
 /* ---------- cover ---------- */
 .cover{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:2rem 1rem}
-.book{position:relative;width:min(30rem,100%);aspect-ratio:3/4.4;background:var(--cover);color:var(--cover-ink);
+.book{position:relative;width:min(42rem,100%);aspect-ratio:3/4.4;background:var(--cover);color:var(--cover-ink);
   border-radius:6px 14px 14px 6px;padding:clamp(1.5rem,6vw,2.75rem);display:flex;flex-direction:column;
   box-shadow:inset 10px 0 0 rgba(0,0,0,.12),0 1px 0 rgba(0,0,0,.2),0 24px 40px -18px rgba(0,0,0,.45)}
 .book::after{content:"";position:absolute;top:0;bottom:0;right:18%;width:12px;background:var(--band);opacity:.85}
@@ -60,7 +60,7 @@ img{max-width:100%}
 
 /* ---------- spreads ---------- */
 main{padding:0 clamp(.5rem,3vw,2rem) 6rem}
-.spread{max-width:72rem;margin:0 auto 4rem;display:grid;grid-template-columns:1fr 1fr;
+.spread{max-width:100rem;margin:0 auto 4rem;display:grid;grid-template-columns:1fr 1fr;
   background:var(--paper);box-shadow:0 20px 40px -24px rgba(0,0,0,.5);border-radius:3px;position:relative}
 .spread::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:28px;transform:translateX(-50%);
   background:linear-gradient(90deg,transparent,rgba(0,0,0,.09) 45%,rgba(0,0,0,.14) 50%,rgba(0,0,0,.09) 55%,transparent);pointer-events:none}
@@ -135,7 +135,7 @@ mark{background:linear-gradient(transparent 35%,var(--hilite) 35%,var(--hilite) 
   .tabs a:hover,.tabs a[aria-current="true"]{box-shadow:0 -3px 0 var(--ballpoint) inset}
 }
 @media (prefers-reduced-motion:reduce){.tabs a{transition:none}}
-.back{max-width:72rem;margin:0 auto;text-align:center;color:var(--desk-ink);padding:2rem 1rem 3rem}
+.back{max-width:100rem;margin:0 auto;text-align:center;color:var(--desk-ink);padding:2rem 1rem 3rem}
 .back a{color:var(--desk-ink)}
 .back .hand{font-size:1.5rem;color:var(--desk-ink)}
 .back .quick{justify-content:center}
@@ -173,7 +173,7 @@ details.older summary{cursor:pointer;min-height:44px;display:flex;align-items:ce
 
 .photo-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start}
 .site.small{font-size:clamp(1.7rem,3.6vw,2.3rem)}
-.post-top{max-width:72rem;margin:0 auto;padding:1.25rem clamp(.5rem,3vw,2rem)}
+.post-top{max-width:100rem;margin:0 auto;padding:1.25rem clamp(.5rem,3vw,2rem)}
 .post-top a{color:var(--desk-ink);font-weight:600;display:inline-flex;align-items:center;min-height:44px}
 .post .page{grid-column:1 / -1}
 .post .prose{max-width:40rem;margin:0 auto;font-size:1.05rem;line-height:1.7}
