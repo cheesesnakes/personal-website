@@ -16,16 +16,18 @@ Then run the following command to build the site.
 docker exec -it website_builder bash -c "bundle install && bundle exec jekyll build"
 ```
 
-Spin up nginx to serve the site. You will have to restart or recreate the nginx container if you make changes to the site.
+The development container serves the site at <http://localhost:4080> and rebuilds it when files change.
+
+For deployment, spin up nginx. You will have to restart or recreate the nginx container if you make changes to the site.
 
 ```bash
-docker compose -d
+docker compose -f docker-compose.yml up -d
 ```
 
 or
 
 ```bash
-docker compose restart
+docker compose -f docker-compose.yml restart
 ```
 
 Shut down the container when you're done:

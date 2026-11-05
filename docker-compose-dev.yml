@@ -4,10 +4,11 @@ services:
     image: amirpourmand/al-folio:v0.16.3
     mem_limit: 2g
     ports:
-      - 4080:4080
+      - 4080:8080
       - 35729:35729
     volumes:
       - .:/srv/jekyll
       - ./docker/imagemagick-policy.xml:/etc/ImageMagick-7/policy.xml:ro
     environment:
       - JEKYLL_ENV=production
+    command: bash -lc "bundle install && bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --force_polling"
