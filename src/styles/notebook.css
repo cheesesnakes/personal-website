@@ -138,6 +138,7 @@ mark{background:linear-gradient(transparent 35%,var(--hilite) 35%,var(--hilite) 
 .back{max-width:72rem;margin:0 auto;text-align:center;color:var(--desk-ink);padding:2rem 1rem 3rem}
 .back a{color:var(--desk-ink)}
 .back .hand{font-size:1.5rem;color:var(--desk-ink)}
+.back .quick{justify-content:center}
 .theme-toggle{font:inherit;font-size:.85rem;background:transparent;border:1px solid currentColor;color:inherit;border-radius:3px;min-height:44px;padding:0 .8rem;cursor:pointer;margin-top:1rem}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 

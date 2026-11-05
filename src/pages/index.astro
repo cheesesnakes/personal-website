@@ -172,6 +172,9 @@ const contents = [
     <footer class="back">
       <p class="hand">{profile.contact_note}</p>
       <p><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+      <div class="quick">
+        {profile.links.map((l) => <a href={l.url}>{l.label}</a>)}
+      </div>
       <button type="button" class="theme-toggle" id="theme">Switch light / dark</button>
     </footer>
   </main>
