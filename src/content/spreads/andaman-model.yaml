@@ -1,0 +1,26 @@
+order: 3
+tab_of: andaman
+
+left:
+  head: ["Andaman Islands, cont.", Chapter 2]
+  title: Reefs in silico
+  notes: >
+    What happens when people replace the apex predators? I built an
+    agent-based model with <mark>apex predators, mesopredators and herbivores</mark>
+    that learn to fear, to see how risk from humans plays out in space and in
+    population dynamics.
+  photos:
+    - { src: model-run.jpg, alt: "Model output plots showing prey, predator and apex predator numbers and traits over time, with a map of agent positions", caption: "One run: prey, predators and apex predators over time, and where they end up." }
+
+right:
+  head: [Side project, With Dakshin Foundation]
+  title: Priorities for the islands
+  title_size: small
+  notes: >
+    Island ecosystems are especially exposed to climate change. We surveyed
+    researchers and stakeholders who live or work in the Andaman and Nicobar
+    Islands to find the <mark>most pressing research and management questions</mark>.
+  photos_row: true
+  photos:
+    - { src: island-heatmap.jpg, alt: "Map of the Andaman and Nicobar Islands with points coloured by number of survey responses", caption: "Where the survey responses came from.", size: small }
+    - { src: andaman.jpg, alt: "Silhouettes of two people watching boats on calm water at dusk in the Andamans", caption: "Evening, South Andaman.", size: small, tilt: right }

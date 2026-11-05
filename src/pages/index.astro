@@ -1,0 +1,178 @@
+---
+// The notebook. Content comes from src/content and src/data; you shouldn't need to edit this file.
+import { getCollection } from 'astro:content';
+import path from 'node:path';
+import Base from '../layouts/Base.astro';
+import Page from '../components/Page.astro';
+import Photo from '../components/Photo.astro';
+import Pub from '../components/Pub.astro';
+import { loadPubs, pubsFor } from '../lib/bib.js';
+import { loadYaml, md, mdInline, monthYear, postSlug } from '../lib/data.js';
+
+const profile = loadYaml('profile');
+const news = loadYaml('news');
+const talks = loadYaml('talks');
+const sections = loadYaml('sections');
+const pubs = loadPubs();
+
+const spreads = (await getCollection('spreads')).sort((a, b) => a.data.order - b.data.order);
+const byId = Object.fromEntries(spreads.map((s) => [s.id, s]));
+const tabbed = spreads.filter((s) => s.data.tab);
+
+const colorOf = (s) => s.data.color || byId[s.data.tab_of]?.data.color;
+
+const posts = (await getCollection('posts'))
+  .sort((a, b) => b.data.date - a.data.date)
+  .map((p) => ({ ...p, url: `/blog/${postSlug(path.basename(p.filePath, '.md'))}/` }));
+
+const half = (list) => [list.slice(0, Math.ceil(list.length / 2)), list.slice(Math.ceil(list.length / 2))];
+
+const splitTalks = () => {
+  const total = talks.reduce((t, y) => t + y.items.length, 0);
+  let count = 0;
+  const left = [];
+  const right = [];
+  talks.forEach((y) => { (count < total / 2 ? left : right).push(y); count += y.items.length; });
+  return [left, right];
+};
+
+const [talksL, talksR] = splitTalks();
+const [postsL, postsR] = half(posts);
+const [pubsL, pubsR] = half(pubs);
+
+const siteLink = (p) => {
+  const s = byId[p.site];
+  return s ? { href: `#${s.id}`, label: s.data.tab } : {};
+};
+
+const fmtDate = (d) => d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+const contents = [
+  ...tabbed.map((s) => ({ href: `#${s.id}`, label: s.data.contents || s.data.tab })),
+  { href: '#talks', label: sections.talks.title },
+  { href: '#writing', label: sections.writing.title },
+  { href: '#publications', label: sections.publications.title },
+];
+---
+<Base title={`${profile.name} — field notes`}>
+  <a class="skip" href="#publications">Skip to publications</a>
+
+  <header class="cover" id="top">
+    <div class="book">
+      <div class="label">
+        <div class="printed"><span>Field book</span><span>Property of</span></div>
+        <h1 class="hand">{profile.name}</h1>
+        <p class="hand">{profile.cover_tagline}</p>
+      </div>
+      <div class="cover-foot">
+        <a class="open-btn" href="#inside">Open the notebook</a>
+        <a href="#publications">Publications</a>
+        <a href={profile.cv}>CV (PDF)</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Sections">
+    <a href="#inside">Inside cover</a>
+    {tabbed.map((s) => <a href={`#${s.id}`} style={`--tab:${s.data.color}`}>{s.data.tab}</a>)}
+    {['talks', 'writing', 'publications'].map((k) => <a href={`#${k}`} style={`--tab:${sections[k].color}`}>{sections[k].tab}</a>)}
+  </nav>
+
+  <main>
+    <section class="spread about" id="inside" aria-labelledby="inside-h">
+      <div class="page">
+        <div class="sheet-head"><span>Inside cover</span><span>If found, please return to</span></div>
+        <div class="polaroid-wrap"><Photo src={profile.portrait} alt={`Portrait of ${profile.name}`} caption={profile.portrait_caption} size="small" tilt="right" /></div>
+        <h2 class="site" id="inside-h">{profile.greeting}</h2>
+        <div class="notes" set:html={md(profile.notes)} />
+        <Fragment set:html={md(profile.bio)} />
+        <div class="quick">
+          {profile.links.map((l) => <a href={l.url}>{l.label}</a>)}
+          <a href={`mailto:${profile.email}`}>Email me</a>
+        </div>
+      </div>
+      <div class="page">
+        <div class="contents">
+          <div class="sheet-head"><span>Contents</span><span>Newest first</span></div>
+          <ol>
+            {contents.map((c, i) => <li><a href={c.href}><span>{c.label}</span><span class="dots"></span><span class="pg">{i + 1}</span></a></li>)}
+          </ol>
+        </div>
+        <div class="sheet-head" style="margin-top:2rem"><span>Recent entries</span><span>News</span></div>
+        <ol class="log">
+          {news.entries.slice(0, news.show).map((n) => <li><time datetime={n.date}>{monthYear(n.date)}</time><span class="e" set:html={mdInline(n.text)} /></li>)}
+        </ol>
+        {news.entries.length > news.show && (
+          <details class="older">
+            <summary>Older entries</summary>
+            <ol class="log">
+              {news.entries.slice(news.show).map((n) => <li><time datetime={n.date}>{monthYear(n.date)}</time><span class="e" set:html={mdInline(n.text)} /></li>)}
+            </ol>
+          </details>
+        )}
+      </div>
+    </section>
+
+    {spreads.map((s) => (
+      <section class="spread" id={s.id} data-tab={s.data.tab_of} style={`--tab:${colorOf(s)}`} aria-labelledby={`${s.id}-h`}>
+        <Page page={s.data.left} pubs={pubsFor(pubs, s.data.left.pubs)} headingId={`${s.id}-h`} />
+        <Page page={s.data.right} pubs={pubsFor(pubs, s.data.right.pubs)} headingId={s.data.left.title ? undefined : `${s.id}-h`} />
+      </section>
+    ))}
+
+    <section class="spread" id="talks" style={`--tab:${sections.talks.color}`} aria-labelledby="talks-h">
+      {[talksL, talksR].map((years, side) => (
+        <div class="page">
+          {side === 0 && <div class="sheet-head"><span>Logbook</span><span>Talks and posters</span></div>}
+          {side === 0 && <h2 class="site" id="talks-h">{sections.talks.title}</h2>}
+          {years.map((y) => (
+            <>
+              <h3 class="year">{y.year}</h3>
+              <ol class="log">
+                {y.items.map((t) => (
+                  <li><time>{t.kind}</time><span class="e">{t.title}<small>{t.where}{t.pdf && <> · <a href={t.pdf}>PDF</a></>}</small></span></li>
+                ))}
+              </ol>
+              {(y.photos || []).map((p) => <div style="margin-top:1.5rem"><Photo {...p} /></div>)}
+            </>
+          ))}
+        </div>
+      ))}
+    </section>
+
+    <section class="spread" id="writing" style={`--tab:${sections.writing.color}`} aria-labelledby="writing-h">
+      {[postsL, postsR].map((list, side) => (
+        <div class="page">
+          {side === 0 && <div class="sheet-head"><span>Clippings</span><span>Writing for everyone else</span></div>}
+          {side === 0 && <h2 class="site" id="writing-h">{sections.writing.title}</h2>}
+          {list.map((p, i) => (
+            <>
+              <article class="clip">
+                <h3><a href={p.url}>{p.data.title.replace(/\.$/, '')}</a></h3>
+                <div class="m">{p.data.pub && <Fragment set:html={mdInline(p.data.pub) + ', '} />}{fmtDate(p.data.date)}</div>
+                <p>{p.data.blurb}</p>
+              </article>
+              {p.data.photo && <Photo src={p.data.photo} alt={p.data.photo_alt || ''} caption={p.data.photo_caption} tilt={i % 2 ? 'left' : 'right'} size={side ? 'small' : 'normal'} />}
+            </>
+          ))}
+        </div>
+      ))}
+    </section>
+
+    <section class="spread" id="publications" style={`--tab:${sections.publications.color}`} aria-labelledby="pub-h">
+      {[pubsL, pubsR].map((list, side) => (
+        <div class="page">
+          <div class="sheet-head"><span>{side ? 'Index, cont.' : 'Index'}</span><span>{side ? '' : 'All publications, newest first'}</span></div>
+          {side === 0 && <h2 class="site" id="pub-h">{sections.publications.title}</h2>}
+          <div class="filed"><ol>{list.map((p) => <Pub pub={p} siteLink={siteLink(p)} />)}</ol></div>
+        </div>
+      ))}
+    </section>
+
+    <footer class="back">
+      <p class="hand">{profile.contact_note}</p>
+      <p><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+      <button type="button" class="theme-toggle" id="theme">Switch light / dark</button>
+    </footer>
+  </main>
+</Base>

@@ -1,0 +1,23 @@
+---
+// One publication slip. With `siteLink`, it shows where the work was done instead of its files.
+const { pub, siteLink } = Astro.props;
+
+const after = [pub.year, pub.note && `(${pub.note})`].filter(Boolean).join(' ');
+---
+<li>
+  <div class="t">{pub.title}</div>
+  {siteLink ? (
+    <div class="m"><i>{pub.venue}</i>, {after}{siteLink.href && <> · <a href={siteLink.href}>{siteLink.label}</a></>}</div>
+  ) : (
+    <>
+      <div class="m">{pub.authors} · <i>{pub.venue}</i>, {after}</div>
+      {(pub.doi || pub.pdf || pub.code) && (
+        <div class="links">
+          {pub.doi && <a href={pub.doi}>DOI</a>}
+          {pub.pdf && <a href={pub.pdf}>PDF</a>}
+          {pub.code && <a href={pub.code}>Code</a>}
+        </div>
+      )}
+    </>
+  )}
+</li>

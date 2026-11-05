@@ -1,0 +1,30 @@
+# Who you are. Text in "notes" and "bio" is Markdown;
+# wrap words in <mark>...</mark> to highlight them.
+
+name: Shawn Dsouza
+cover_tagline: Behavioural ecologist. Notes from five field sites, seedlings back to butterflies.
+cv: /assets/pdf/cv.pdf
+email: shawn27.dsouza@pm.me
+contact_note: I’d love to talk about animal behaviour, or any of this.
+
+portrait: shawn.jpg
+portrait_caption: me, on a good day
+greeting: Hi, I’m Shawn.
+
+notes: >
+  I study how the behaviour of individual animals adds up to large-scale
+  patterns in ecosystems, and how <mark>humans, as part of those systems,</mark>
+  change them.
+
+bio: |
+  I’m trained as an ecologist, but I treat people as part of the natural systems I study. I’ve worked on birds, butterflies, sea snakes, sharks and reef fish, and anthropogenic change has run through all of it.
+
+  I completed my Ph.D. as a Prime Minister’s Research Fellow at the Centre for Ecological Sciences, IISc, Bangalore. I’m now a postdoctoral researcher in the CaFE Lab (Dr. Meghna Krishnadas) at NCBS, Bengaluru. Before that, at Dakshin Foundation, I helped manage the sharks and rays projects, our long-term work at Malvan, and projects in the Andaman Islands.
+
+links:
+  - { label: CV (PDF), url: /assets/pdf/cv.pdf }
+  - { label: Google Scholar, url: "https://scholar.google.com/citations?user=1KEncCcAAAAJ" }
+  - { label: ORCID, url: "https://orcid.org/0000-0002-0245-9531" }
+  - { label: ResearchGate, url: "https://www.researchgate.net/profile/Shawn-Dsouza-3/" }
+  - { label: LinkedIn, url: "https://www.linkedin.com/in/shawndsouza27" }
+  - { label: GitHub, url: "https://github.com/cheesesnakes" }

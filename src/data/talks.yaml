@@ -1,0 +1,48 @@
+# Newest year first. `kind` is the small label on the left.
+# Optional per item: pdf. Optional per year: photos (files in src/assets/photos).
+
+- year: 2026
+  items:
+    - { kind: Symposium, title: "Global change impacts on predator-prey ecology and evolution", where: "GRS Predator–Prey Interactions, Barga" }
+    - { kind: Poster, title: "Are human super-predators always super-scary?", where: "GRS Predator–Prey Interactions, Barga", pdf: /assets/pdf/poster_2025_1.pdf }
+    - { kind: Poster, title: "Local extraction of predatory fish may initiate behaviourally mediated trophic cascades in the Andamans", where: "GRC Predator–Prey Interactions, Barga", pdf: /assets/pdf/poster_2025_2.pdf }
+
+- year: 2025
+  items:
+    - { kind: Symposium, title: "Responses and adaptations to human super-predators and anthropogenically modified environments", where: "Behaviour 2025, Kolkata. Co-chairs Chayan Munshi and Maria Thaker" }
+    - { kind: Talk, title: "Are super-predators also super-scary?", where: "Behaviour 2025, Kolkata" }
+    - { kind: Talk, title: "Fishes do fear the reaper: marine protected areas alter fish assemblages and behaviour", where: "Behaviour 2025, Kolkata" }
+  photos:
+    - { src: behaviour-2025.jpg, alt: "Shawn presenting on stage at Behaviour 2025 with a slide titled Sampling fish behaviour", caption: "Behaviour 2025, Kolkata." }
+
+- year: 2024
+  items:
+    - { kind: Talk, title: "Are super-predators also super-scary?", where: "ISBE 2024, Melbourne" }
+  photos:
+    - { src: isbe-2024.jpg, alt: "Shawn giving a talk to a seated audience at ISBE 2024 in Melbourne", caption: "ISBE 2024, Melbourne.", tilt: right }
+
+- year: 2021
+  items:
+    - { kind: Public talk, title: "Sea snakes in a human-dominated seascape", where: "Online, Kalinga Centre for Rainforest Ecology" }
+
+- year: 2020
+  items:
+    - { kind: Lecture, title: "Whose food is it anyway?", where: "Online lecture on marine food webs and fisheries for Parikrama Foundation school" }
+
+- year: 2019
+  items:
+    - { kind: Talk, title: "Fishing for sea snakes", where: "Student talk, SCCS Cambridge" }
+    - { kind: Invited, title: "Sea snakes: ecology and threats", where: "Centre for Ecology and Conservation, University of Exeter" }
+    - { kind: Outreach, title: "Parikrama Festival of Science", where: "Sea snake ecology and threats, for school students" }
+  photos:
+    - { src: sccs-cam-2019.jpg, alt: "Shawn speaking beside a projected slide titled Fishing for sea snakes at SCCS Cambridge", caption: "SCCS Cambridge 2019.", size: small }
+
+- year: 2018
+  items:
+    - { kind: Speed talk, title: "Trawling out the beaked sea snakes", where: "Reproductive biology of sea snakes in bycatch, SPEEC UP 2018" }
+
+- year: 2017
+  items:
+    - { kind: Speed talk, title: "Can butterflies improve conservation?", where: "SPEEC UP, Bangalore" }
+    - { kind: Poster, title: "Can butterflies improve conservation?", where: "SCCS Bangalore" }
+    - { kind: Poster, title: "How has Tamhini Ghat changed? Comparing butterfly populations after two decades", where: "YETI 2017, Tezpur University" }

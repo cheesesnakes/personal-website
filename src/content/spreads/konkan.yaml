@@ -1,0 +1,24 @@
+order: 5
+tab: Konkan
+contents: "Konkan coast: sea snakes"
+color: "#9CC3DD"
+
+left:
+  head: [Field site, Dakshin Foundation]
+  title: Konkan coast
+  fields:
+    - [Where, "Fish landing sites, west coast of India"]
+    - [Watching, Sea snakes in fisheries bycatch]
+    - [With, Dakshin Foundation]
+    - [Question, What does fishing do to a sea snake assemblage?]
+  notes_label: Notes
+  notes: >
+    Two sympatric species, very different fates. <mark>Diet, demography and
+    resource use</mark> may explain why *Hydrophis schistosus* copes with
+    bycatch better than its neighbours.
+  photos:
+    - { src: bycatch.jpg, alt: "A banded sea snake coiled in a woven basket", caption: "Bycatch, waiting to be measured." }
+
+right:
+  sketch: sea-snake
+  pubs: konkan

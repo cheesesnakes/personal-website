@@ -1,0 +1,24 @@
+order: 6
+tab: Tamhini
+contents: "Tamhini Ghat: birds and butterflies"
+color: "#B7C77A"
+
+left:
+  head: [Field site, Where it started]
+  title: Tamhini Ghat
+  fields:
+    - [Where, "Tamhini Wildlife Sanctuary, Western Ghats, Maharashtra"]
+    - [Watching, "Birds & butterflies"]
+    - [With, Anand Padhye]
+    - [For, "Dissertation, Pune University"]
+  notes_label: Notes
+  notes: >
+    Two communities, two decades apart. Comparing <mark>how birds and
+    butterflies changed</mark> at the same sanctuary over twenty years.
+  photos:
+    - { src: tamhini.jpg, alt: "Green rice paddies below misty hills and a small farmhouse at Tamhini", caption: "Monsoon paddies at Tamhini." }
+
+right:
+  sketch: butterfly
+  sketch_caption: Two decades between surveys.
+  pubs: tamhini

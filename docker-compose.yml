@@ -3,7 +3,7 @@ services:
     image: nginx
     container_name: personal-website
     volumes:
-      - /home/cheesesnakes/apps/website/_site:/usr/share/nginx/html
+      - ./dist:/usr/share/nginx/html:ro
     restart: unless-stopped
     networks:
       - proxy
@@ -20,6 +20,15 @@ services:
       - "traefik.http.routers.shawn-secure.service=shawn"
       - "traefik.http.services.shawn.loadbalancer.server.port=80"
       - "traefik.docker.network=proxy"
+
+  # Builds the site into ./dist. Run: docker compose run --rm build
+  build:
+    image: node:22
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: sh -c "npm ci && npm run build"
+    profiles: ["build"]
 
 networks:
   proxy:

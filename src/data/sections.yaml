@@ -1,0 +1,4 @@
+# Fixed sections at the end of the notebook: tab label and tab colour.
+talks: { tab: Talks, title: Talks and posters, color: "#C8CFB8" }
+writing: { tab: Writing, title: Writing, color: "#E9DFA8" }
+publications: { tab: Index, title: Index of publications, color: "#D9DCCF" }

@@ -1,49 +1,55 @@
-My personal website, built using Jekyll and self-hosted. 
+# shawndsouza.com — field notebook
 
-Based on [al-folio](https://github.com/alshedivat/al-folio)
+Everything you'd normally change is a text file. You shouldn't need to touch
+anything in `src/pages`, `src/components` or `src/styles` to update content.
 
-### Usage
+## Where things live
 
-Make your changes in the root directory, then start the development container:
+| To change…                         | Edit                                   |
+|------------------------------------|----------------------------------------|
+| Name, bio, links, portrait, email  | `src/data/profile.yaml`                |
+| News on the inside cover           | `src/data/news.yaml`                   |
+| Talks and posters                  | `src/data/talks.yaml`                  |
+| Publications                       | `src/data/papers.bib`                  |
+| A field-site spread                | `src/content/spreads/<site>.yaml`      |
+| Blog posts / essays                | `src/content/posts/*.md`               |
+| Tab colours for Talks/Writing/Index| `src/data/sections.yaml`               |
+| Photos                             | drop files in `src/assets/photos/`     |
+| PDFs (CV, papers, posters)         | `public/assets/pdf/`                   |
 
-```bash
-docker compose -f docker-compose-dev.yml up -d
-```
+## Common jobs
 
-The container installs the dependencies and runs Jekyll's watch server. Open <http://localhost:4080> to view the site. Port `4080` on your machine maps to port `8080` in the container; live reload uses port `35729`. Changes to the mounted project files are rebuilt automatically.
+**Add a paper.** Paste the BibTeX into `src/data/papers.bib` and add
+`site = {andaman},` (or `malvan`, `konkan`, `tamhini`, `ncbs`) so it shows on
+that spread. It always appears in the index. Optional fields: `pdf = {file.pdf}`
+(a file in `public/assets/pdf/`), `code = {https://github.com/...}`,
+`note = {in press}`, `venue = {...}` to override the journal name, and
+`hide = {true}` to leave an entry out.
 
-To follow the development server logs:
+**Add news.** Add a line at the top of `entries` in `src/data/news.yaml`.
 
-```bash
-docker compose -f docker-compose-dev.yml logs -f
-```
+**Add a talk.** Add an item under the right year in `src/data/talks.yaml`
+(or a new year block at the top).
 
-To generate the static site manually instead of relying on the watch server:
+**Add a field site.** Copy an existing file in `src/content/spreads/`, rename
+it (the file name becomes the link, e.g. `#ncbs`), and set `order`. See
+`SPREADS.md` for every option.
 
-```bash
-docker exec -it website_builder bundle exec jekyll build
-```
+**Add a post.** Add `src/content/posts/YYYY-MM-DD-Slug.md` with the same front
+matter as the others. It appears in the Writing spread and at `/blog/YYYY/Slug/`.
 
-For deployment, the nginx container serves the prebuilt site from `/home/cheesesnakes/apps/website/_site` on the Docker host. Put the generated Jekyll output in that directory before deploying; this path is specific to the deployment host. The Compose configuration also expects an existing external Docker network named `proxy`, connected to Traefik.
+**Highlight text.** In any notes, wrap words in `<mark>…</mark>`.
 
-```bash
-docker compose -f docker-compose.yml up -d
-```
+## Preview and publish
 
-Since nginx reads the site through a bind mount, updating the files in that directory does not require restarting nginx. To restart the container explicitly:
+    npm install          # once
+    npm run dev          # live preview at http://localhost:4321 while you edit
+    npm run build        # writes the finished site to ./dist
 
-```bash
-docker compose -f docker-compose.yml restart
-```
+Or build with Docker, without installing Node:
 
-Shut down the development container when you're done:
+    docker compose run --rm build
 
-```bash
-docker compose -f docker-compose-dev.yml down
-```
-
-To shut down the deployment container:
-
-```bash
-docker compose -f docker-compose.yml down
-```
+nginx serves `./dist`, so the site updates as soon as a build finishes.
+If an edit breaks a rule (a missing photo, a typo in a field name), the build
+stops and names the file and field.

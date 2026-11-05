@@ -1,0 +1,38 @@
+---
+// One page per post in src/content/posts, at the same URLs as the old site (/blog/2019/DITL/).
+import { getCollection, render } from 'astro:content';
+import path from 'node:path';
+import Base from '../../layouts/Base.astro';
+import { mdInline, postSlug } from '../../lib/data.js';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: postSlug(path.basename(post.filePath, '.md')) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const date = post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+<Base title={`${post.data.title} — Shawn Dsouza`} description={post.data.description}>
+  <div class="post-top"><a href="/#writing">Back to the notebook</a></div>
+  <main>
+    <article class="spread post" aria-labelledby="post-h">
+      <div class="page">
+        <div class="sheet-head"><span>Clipping</span><span>{date}</span></div>
+        <div class="prose">
+          <h1 class="site" id="post-h">{post.data.title}</h1>
+          {post.data.pub && <p class="notes-label" set:html={mdInline(post.data.pub)} />}
+          <Content />
+        </div>
+      </div>
+    </article>
+    <footer class="back">
+      <button type="button" class="theme-toggle" id="theme">Switch light / dark</button>
+    </footer>
+  </main>
+</Base>

@@ -1,0 +1,24 @@
+order: 1
+tab: NCBS
+contents: "NCBS: seedlings"
+color: "#E6C870"
+
+left:
+  head: [Field site, "Current, since 2026"]
+  title: NCBS, Bengaluru
+  fields:
+    - [Where, "CaFE Lab, Dr. Meghna Krishnadas"]
+    - [Watching, "Seedlings, plant traits"]
+    - [Since, September 2026]
+    - [Question, How do traits and environment decide which seedlings survive?]
+  notes_label: Notes
+  notes: >
+    First time working on something that can’t run away. Using long-term
+    monitoring and trait data to see how <mark>trait-environment interactions</mark>
+    shape community assembly across environmental and disturbance gradients.
+
+right:
+  sketch: seedling
+  sketch_caption: New notebook, new taxa.
+  pubs: ncbs
+  pubs_empty: Nothing yet. Check back.

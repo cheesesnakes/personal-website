@@ -1,0 +1,31 @@
+order: 2
+tab: Andamans
+contents: "Andaman Islands: reef fish and fear"
+color: "#86CBC0"
+
+left:
+  head: [Field site, "Ph.D., 2021–2026"]
+  title: Andaman Islands
+  fields:
+    - [Where, "Coral reefs, South Andaman"]
+    - [Watching, "Reef fish, predators & people"]
+    - [Supervisor, "Prof. Kartik Shanker, CES, IISc"]
+    - [Advisors, "Prof. Maria Thaker, Dr. Vishwesha Guttal"]
+  notes_label: Notes
+  notes: >
+    Thesis: <mark>“Fishes do fear the reaper.”</mark> We’ve been gatherers,
+    predators and now mostly visitors. Two questions: when do animals see us
+    as a threat, and how do our activities change their behaviour?
+  chapters_label: The four chapters
+  chapters:
+    - { text: "A meta-analysis of how human activities change animal behaviour.", link: "https://doi.org/10.1111/ele.70287", link_text: "Ecology Letters, 2025" }
+    - { text: "Agent-based models of humans replacing apex predators.", link: "#andaman-model", link_text: "Individual-based Ecology, 2026" }
+    - { text: "Field surveys: does removing predatory fish change herbivory on reefs?", link: "https://doi.org/10.1101/2025.11.17.688842", link_text: "bioRxiv, 2025" }
+    - { text: "Predator-model experiments: do prey on fished reefs stop reacting?", link: "https://doi.org/10.64898/2025.12.08.692929", link_text: "bioRxiv, 2025" }
+  reef: true
+
+right:
+  photos:
+    - { src: spear.jpg, alt: "A spearfisher underwater holding a speared red reef fish over coral", caption: "Humans as predators on the reef.", tilt: right }
+  sketch: reef-fish
+  pubs: andaman

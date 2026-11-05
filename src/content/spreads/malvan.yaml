@@ -1,0 +1,25 @@
+order: 4
+tab: Malvan
+contents: "Malvan: sharks and rays"
+color: "#E6A985"
+
+left:
+  head: [Field site, Dakshin Foundation]
+  title: Malvan
+  fields:
+    - [Where, "Malvan, Sindhudurg, Maharashtra"]
+    - [Watching, "Sharks, rays & skates in fisheries landings"]
+    - [Since, 2016 (Dakshin Foundation)]
+    - [My role, "Managed the sharks & rays projects"]
+  notes_label: Notes
+  notes: >
+    Long-term monitoring with <mark>local fishers</mark>, testing simple
+    protocols they can run themselves. Since 2018 it’s also been a home for
+    Master’s theses on diet, reproduction, microplastics and heavy metals.
+    Plus outreach with fishing communities and schools.
+  photos:
+    - { src: sharks.jpg, alt: "A shark lying on a tarp at a fish landing site, surrounded by people’s legs", caption: "Morning landings at Malvan." }
+
+right:
+  sketch: shark
+  pubs: malvan

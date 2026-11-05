@@ -1,0 +1,17 @@
+# Newest first. The first `show` entries appear on the inside cover;
+# the rest fold away under "Older entries". Text is Markdown.
+
+show: 5
+
+entries:
+  - { date: 2026-10, text: "Superpredator model paper in press at *Individual-based Ecology*." }
+  - { date: 2026-09, text: "Started my postdoc in the CaFE Lab, NCBS." }
+  - { date: 2026-06, text: "Defended my Ph.D.!" }
+  - { date: 2025-12, text: "New paper in *Ecology Letters*: are super-predators always super-scary? [PDF](/assets/pdf/Dsouza_et_al_EcoLett_2025.pdf)" }
+  - { date: 2025-12, text: "Gave my departmental colloquium talk." }
+  - { date: 2024-10, text: "Talk at ISBE 2024, Melbourne." }
+  - { date: 2024-08, text: "New preprint: are super-predators also super-scary?" }
+  - { date: 2022-09, text: "Comprehensive exam done." }
+  - { date: 2022-07, text: "Tamhini paper accepted in *Current Science*." }
+  - { date: 2022-06, text: "Received the PMRF fellowship." }
+  - { date: 2021-02, text: "Joined the Ph.D. programme at IISc." }

@@ -1,0 +1,54 @@
+---
+// One page of a spread, built from a `left:` or `right:` block in a spread file.
+import Photo from './Photo.astro';
+import Sketch from './Sketch.astro';
+import Pub from './Pub.astro';
+import Reef from './Reef.astro';
+import { md } from '../lib/data.js';
+
+const { page, pubs = [], headingId } = Astro.props;
+---
+<div class="page">
+  {page.head && <div class="sheet-head"><span>{page.head[0]}</span><span>{page.head[1]}</span></div>}
+
+  {page.title && <h2 class={page.title_size === 'small' ? 'site small' : 'site'} id={headingId}>{page.title}</h2>}
+
+  {page.fields.length > 0 && (
+    <dl class="fields">
+      {page.fields.map(([k, v]) => <><dt>{k}</dt><dd>{v}</dd></>)}
+    </dl>
+  )}
+
+  {page.notes_label && <p class="notes-label">{page.notes_label}</p>}
+  {page.notes && <div class="notes" set:html={md(page.notes)} />}
+
+  {page.chapters.length > 0 && (
+    <>
+      {page.chapters_label && <p class="notes-label">{page.chapters_label}</p>}
+      <ol class="chapters">
+        {page.chapters.map((c) => (
+          <li><span>{c.text} {c.link && <a href={c.link}>{c.link_text || 'Read'}</a>}</span></li>
+        ))}
+      </ol>
+    </>
+  )}
+
+  {page.reef && <Reef />}
+
+  {page.photos.length > 0 && (
+    page.photos_row
+      ? <div class="photo-row">{page.photos.map((p) => <Photo {...p} />)}</div>
+      : page.photos.map((p) => <Photo {...p} />)
+  )}
+
+  {page.sketch && <Sketch name={page.sketch} caption={page.sketch_caption} />}
+
+  {page.pubs && (
+    <div class="filed">
+      <h3>Published from this site</h3>
+      {pubs.length > 0
+        ? <ol>{pubs.map((p) => <Pub pub={p} />)}</ol>
+        : <p class="hand" style="font-size:1.2rem;margin:.5rem 0 0">{page.pubs_empty || 'Nothing yet.'}</p>}
+    </div>
+  )}
+</div>

@@ -1,0 +1,15 @@
+---
+// A pen sketch. `name` is a file in src/components/sketches (without .astro).
+const { name, caption } = Astro.props;
+
+const files = import.meta.glob('./sketches/*.astro', { eager: true });
+const file = files[`./sketches/${name}.astro`];
+
+if (!file) throw new Error(`Sketch "${name}" not found in src/components/sketches`);
+
+const Svg = file.default;
+---
+<figure class="sketch">
+  <Svg />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
